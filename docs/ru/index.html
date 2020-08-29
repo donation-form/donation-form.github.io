@@ -1,0 +1,879 @@
+<!doctype html>
+<html class="h-100" dir="ltr" lang="ru">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>Форма для приёма пожертвований</title>
+  <meta name="description" content="Специальная форма для приёма пожертвований на разработку веб-приложений."/>
+
+  <!-- dns-prefetch -->
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net"/>
+  <!-- / dns-prefetch -->
+
+  <!-- preconnect -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin/>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin/>
+  <!-- / preconnect -->
+
+  <!-- styles -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" as="style"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"/>
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" as="style"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap"/>
+
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;display=swap" as="style"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&amp;display=swap"/>
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" as="style"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"/>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn-storage.github.io/styles/bootstrap/theme.css"/>
+  <link rel="stylesheet" href="/assets/css/theme.min.css"/>
+  <!-- / styles -->
+
+  <!-- locale -->
+  <link rel="alternate" hreflang="en" href="/en/"/>
+  <link rel="alternate" hreflang="ru" href="/ru/"/>
+  <!-- / locale -->
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+</head>
+<body class="d-flex flex-column h-100">
+<div class="py-3 py-md-5 flex-shrink-0">
+  <div class="container">
+    <div class="row">
+      <main class="col-lg">
+        <nav class="mb-3">
+          <div class="nav nav-tabs" role="tablist">
+            <a class="nav-item nav-link active" id="nav-donation-tab" data-toggle="tab" href="#nav-donation" role="tab" aria-controls="nav-donation" aria-selected="true"><i class="fas fa-home fa-fw"></i></a>
+            <a class="nav-item nav-link" id="nav-bank-tab" data-toggle="tab" href="#nav-bank" role="tab" aria-controls="nav-bank" aria-selected="false"><i class="fas fa-credit-card fa-fw"></i></a>
+            <a class="nav-item nav-link" id="nav-crypto-tab" data-toggle="tab" href="#nav-crypto" role="tab" aria-controls="nav-crypto" aria-selected="false"><i class="fab fa-bitcoin fa-fw"></i></a>
+          </div>
+        </nav>
+        <div class="tab-content">
+          <!-- donation-form -->
+          <div class="tab-pane show active" id="nav-donation" role="tabpanel" aria-labelledby="nav-donation-tab">
+            <form method="post" action="https://money.yandex.ru/quickpay/confirm.xml">
+              <input type="hidden" name="formcomment" id="ya-form-comment" value="Donation Form"/>
+              <input type="hidden" name="short-dest" id="ya-short-dest" value="Donation Form"/>
+              <input type="hidden" name="quickpay-form" id="ya-quickpay-form" value="donate"/>
+              <div class="row">
+                <div class="col-lg">
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <select class="custom-select" name="targets" id="ya-targets">
+                        <option value="[DONATION] Common support">Общая поддержка</option>
+                        <optgroup label="Разработки">
+                          <option value="[DONATION] Drupal Development">Разработка и локализация Drupal</option>
+                          <option value="[DONATION] Flarum Development">Разработка и локализация Flarum</option>
+                          <option value="[DONATION] MediaWiki Development">Разработка и локализация MediaWiki</option>
+                          <option value="[DONATION] XenForo Development">Разработка и локализация XenForo</option>
+                        </optgroup>
+                        <optgroup label="Проекты">
+                          <option value="[DONATION] z1729 Factory">z1729 Factory</option>
+                          <option value="[DONATION] Marketplace">Marketplace</option>
+                          <option value="[DONATION] Package Store">Package Store</option>
+                          <option value="[DONATION] UNIX Community">UNIX Community</option>
+                          <option value="[DONATION] Webmasters Community">Webmasters Community</option>
+                        </optgroup>
+                      </select>
+                      <small class="form-text text-muted">
+                        Укажите назначение перевода.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <select class="custom-select" name="receiver" id="ya-receiver">
+                        <option value="4100110453455255">Yu Dunaev</option>
+                        <option value="4100110453455255">Kitsune Solar</option>
+                        <option value="4100110453455255">x06174</option>
+                      </select>
+                      <small class="form-text text-muted">
+                        Выберите получателя.
+                      </small>
+                    </div>
+                    <div class="form-group col-lg-4">
+                      <input class="form-control" type="number" name="sum" id="ya-sum" value="100" min="1"/>
+                      <small class="form-text text-muted">
+                        Укажите сумму.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <select class="custom-select" name="paymentType" id="ya-payment-type">
+                        <option value="AC">Банковская карта</option>
+                        <option value="PC">Яндекс.Деньги</option>
+                        <option value="MC">Мобильный телефон</option>
+                      </select>
+                      <small class="form-text text-muted">
+                        Выберите способ перевода.
+                      </small>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <textarea class="form-control" name="comment" id="ya-comment" rows="2" maxlength="200" placeholder="Введите комментарий (если имеется)..."></textarea>
+                      <small class="form-text text-muted">
+                        Введите сопроводительный комментарий (не более 200 символов).
+                      </small>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg">
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="need-fio" id="ya-need-fio"/>
+                        <label class="custom-control-label" for="ya-need-fio">ФИО</label>
+                        <small class="form-text text-muted">
+                          Отметьте, если хотите указать ФИО отправителя.
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="need-email" id="ya-need-email"/>
+                        <label class="custom-control-label" for="ya-need-email">E-mail</label>
+                        <small class="form-text text-muted">
+                          Отметьте, если хотите указать электронную почту отправителя.
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="need-phone" id="ya-need-phone"/>
+                        <label class="custom-control-label" for="ya-need-phone">Телефон</label>
+                        <small class="form-text text-muted">
+                          Отметьте, если хотите указать телефон отправителя.
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <div class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox" name="need-address" id="ya-need-address"/>
+                        <label class="custom-control-label" for="ya-need-address">Адрес</label>
+                        <small class="form-text text-muted">
+                          Отметьте, если хотите указать адрес отправителя.
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-lg">
+                      <button class="btn btn-primary btn-lg btn-block" type="submit">
+                        <i class="fas fa-donate fa-fw"></i>
+                        Перевести
+                      </button>
+                    </div>
+                    <div class="form-group col-lg">
+                      <a class="btn btn-secondary btn-lg mr-2" href="#" role="button" data-toggle="modal" data-target="#modal-paypal">
+                        <i class="fab fa-paypal fa-fw"></i>
+                      </a>
+                      <a class="btn btn-secondary btn-lg mr-2" href="#" role="button" data-toggle="modal" data-target="#modal-patreon">
+                        <i class="fab fa-patreon fa-fw"></i>
+                      </a>
+                      <a class="btn btn-secondary btn-lg" href="#" role="button" data-toggle="modal" data-target="#modal-liberapay">
+                        <i class="fas fa-hand-holding-usd fa-fw"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <!-- / donation-form -->
+          <!-- bank -->
+          <div class="tab-pane" id="nav-bank" role="tabpanel" aria-labelledby="nav-bank-tab">
+            <ul class="nav nav-pills mb-3" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="pills-bank-account-rub-tab" data-toggle="pill" href="#pills-bank-account-rub" role="tab" aria-controls="pills-bank-account-rub" aria-selected="true"><i class="fas fa-ruble-sign fa-fw"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-bank-account-usd-tab" data-toggle="pill" href="#pills-bank-account-usd" role="tab" aria-controls="pills-bank-account-usd" aria-selected="false"><i class="fas fa-dollar-sign fa-fw"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="pills-bank-account-eur-tab" data-toggle="pill" href="#pills-bank-account-eur" role="tab" aria-controls="pills-bank-account-eur" aria-selected="false"><i class="fas fa-euro-sign fa-fw"></i></a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane show active" id="pills-bank-account-rub" role="tabpanel" aria-labelledby="pills-bank-account-rub-tab">
+                <h4 class="text-muted">Банковская карта</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Альфа-Банк</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-card-number-rub" class="form-control" type="text" value="4584 4328 1325 5511" readonly/>
+                      <div class="input-group-append">
+                        <a class="btn btn-primary" href="https://alfaportal.ru/card2card/ptpl/alfaportal/initial.html?tfr_card_dst_num=4584432813255511" role="button" target="_blank">
+                          <i class="fas fa-donate fa-fw"></i>
+                        </a>
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-card-number-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+                <h4 class="text-muted">Банковский счёт</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Получатель</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-beneficiary-name-rub" class="form-control" type="text" value="Дунаев Юрий Александрович" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-name-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Счет получателя</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">RUB</span>
+                      </div>
+                      <input id="bank-beneficiary-account-rub" class="form-control" type="text" value="40817810006230088456" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-account-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Банк получателя</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-name-rub" class="form-control" type="text" value="АО Альфа-Банк, г. Москва" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-name-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">БИК</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-bic-rub" class="form-control" type="text" value="044525593" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-bic-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">КПП</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-iec-rub" class="form-control" type="text" value="770801001" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-iec-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">ИНН</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-itn-rub" class="form-control" type="text" value="7728168971" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-itn-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Корреспондентский счет</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-corr-account-rub" class="form-control" type="text" value="30101810200000000593" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-corr-account-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Назначение платежа</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-payment-target-rub" class="form-control" type="text" value="[DONATION] Благодарность за помощь в развитии сообществ" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-payment-target-rub">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="pills-bank-account-usd" role="tabpanel" aria-labelledby="pills-bank-account-usd-tab">
+                <h4 class="text-muted">Bank card</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Alfa-Bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-card-number-usd" class="form-control" type="text" value="4584 4328 1371 3790" readonly/>
+                      <div class="input-group-append">
+                        <a class="btn btn-primary" href="https://alfaportal.ru/card2card/ptpl/alfaportal/initial.html?tfr_card_dst_num=4584432813713790" role="button" target="_blank">
+                          <i class="fas fa-donate fa-fw"></i>
+                        </a>
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-card-number-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+                <h4 class="text-muted">Bank account</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary Name</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-beneficiary-name-usd" class="form-control" type="text" value="Dunaev Iurii Aleksandrovich" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-name-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary account</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">USD</span>
+                      </div>
+                      <input id="bank-beneficiary-account-usd" class="form-control" type="text" value="40817840306230008711" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-account-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-name-usd" class="form-control" type="text" value="AO ALFA-BANK, 27 Kalanchevskaya str., Moscow, 107078" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-name-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">SWIFT</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-swift-usd" class="form-control" type="text" value="ALFARUMM" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-swift-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Correspondent Bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-corr-usd" class="form-control" type="text" value="CITIBANK NA, 399 Park Avenue, New York, NY 10043, USA" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-corr-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Correspondent SWIFT</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-corr-swift-usd" class="form-control" type="text" value="CITIUS33" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-corr-swift-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Purpose of payment</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-payment-target-usd" class="form-control" type="text" value="[DONATION] Thanks for helping community development" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-payment-target-usd">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="pills-bank-account-eur" role="tabpanel" aria-labelledby="pills-bank-account-eur-tab">
+                <h4 class="text-muted">Bank card</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Alfa-Bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-card-number-eur" class="form-control" type="text" value="4584 4328 1893 8194" readonly/>
+                      <div class="input-group-append">
+                        <a class="btn btn-primary" href="https://alfaportal.ru/card2card/ptpl/alfaportal/initial.html?tfr_card_dst_num=4584432818938194" role="button" target="_blank">
+                          <i class="fas fa-donate fa-fw"></i>
+                        </a>
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-card-number-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr/>
+                <h4 class="text-muted">Bank account</h4>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary Name</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-beneficiary-name-eur" class="form-control" type="text" value="Dunaev Iurii Aleksandrovich" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-name-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary account</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">EUR</span>
+                      </div>
+                      <input id="bank-beneficiary-account-eur" class="form-control" type="text" value="40817978706230007747" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-beneficiary-account-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Beneficiary bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-name-eur" class="form-control" type="text" value="AO ALFA-BANK, 27 Kalanchevskaya str., Moscow, 107078" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-name-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">SWIFT</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-swift-eur" class="form-control" type="text" value="ALFARUMM" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-swift-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Correspondent Bank</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-corr-eur" class="form-control" type="text" value="COMMERZBANK AG, D-60311 Frankfurt am Main, Germany" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-corr-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Correspondent SWIFT</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-corr-swift-eur" class="form-control" type="text" value="COBADEFF" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-corr-swift-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-lg">Purpose of payment</div>
+                  <div class="col-lg">
+                    <div class="input-group">
+                      <input id="bank-payment-target-eur" class="form-control" type="text" value="[DONATION] Thanks for helping community development" readonly/>
+                      <div class="input-group-append">
+                        <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bank-payment-target-eur">
+                          <i class="fas fa-copy fa-fw"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / bank -->
+          <!-- crypto -->
+          <div class="tab-pane" id="nav-crypto" role="tabpanel" aria-labelledby="nav-crypto-tab">
+            <div class="row row-cols-1 row-cols-lg-3">
+              <div class="col mb-4">
+                <div class="d-flex justify-content-center">
+                  <figure class="figure d-block">
+                    <canvas id="bitcoin-qr" data-qr="bc1q855dt7p8mtd74yw96vvu93wy59j0fl8gaqh62h"></canvas>
+                  </figure>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">BTC</span>
+                  </div>
+                  <input id="bitcoin-wallet" class="form-control" type="text" value="bc1q855dt7p8mtd74yw96vvu93wy59j0fl8gaqh62h" readonly/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bitcoin-wallet">
+                      <i class="fas fa-copy fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="d-flex justify-content-center">
+                  <figure class="figure d-block">
+                    <canvas id="ethereum-qr" data-qr="0x7252D91B61E18eDE4c8ec43a0EE7F1dFD17542ab"></canvas>
+                  </figure>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">ETH</span>
+                  </div>
+                  <input id="ethereum-wallet" class="form-control" type="text" value="0x7252D91B61E18eDE4c8ec43a0EE7F1dFD17542ab" readonly/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary ext-clipboard" data-clipboard-target="#ethereum-wallet">
+                      <i class="fas fa-copy fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="d-flex justify-content-center">
+                  <figure class="figure d-block">
+                    <canvas id="bitcoin-cash-qr" data-qr="qrzsshvc5zszm74nel42a3uylc6y6s6g9sysu5afms"></canvas>
+                  </figure>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">BCH</span>
+                  </div>
+                  <input id="bitcoin-cash-wallet" class="form-control" type="text" value="qrzsshvc5zszm74nel42a3uylc6y6s6g9sysu5afms" readonly/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary ext-clipboard" data-clipboard-target="#bitcoin-cash-wallet">
+                      <i class="fas fa-copy fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="d-flex justify-content-center">
+                  <figure class="figure d-block">
+                    <canvas id="monero-qr" data-qr="48Q1zEztoECNyijSoQVhHC12LaxzNLPrhBgwGdM2847QY8ayusQ6XBjCD9hgeQk2LLUKbBvC5yKxDDmzkGvGyMGE9o95YkR"></canvas>
+                  </figure>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">XMR</span>
+                  </div>
+                  <input id="monero-wallet" class="form-control" type="text" value="48Q1zEztoECNyijSoQVhHC12LaxzNLPrhBgwGdM2847QY8ayusQ6XBjCD9hgeQk2LLUKbBvC5yKxDDmzkGvGyMGE9o95YkR" readonly/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary ext-clipboard" data-clipboard-target="#monero-wallet">
+                      <i class="fas fa-copy fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="col mb-4">
+                <div class="d-flex justify-content-center">
+                  <figure class="figure d-block">
+                    <canvas id="zcash-qr" data-qr="t1coNABJTEBgvXfpnzf65pCLKyS135oU43r"></canvas>
+                  </figure>
+                </div>
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">ZEC</span>
+                  </div>
+                  <input id="zcash-wallet" class="form-control" type="text" value="t1coNABJTEBgvXfpnzf65pCLKyS135oU43r" readonly/>
+                  <div class="input-group-append">
+                    <button class="btn btn-primary ext-clipboard" data-clipboard-target="#zcash-wallet">
+                      <i class="fas fa-copy fa-fw"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- / crypto -->
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
+
+<!-- modal-paypal -->
+<div id="modal-paypal" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title text-truncate">PayPal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-lg">Юрий Дунаев</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="x06174" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success" href="https://paypal.me/x06174" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / modal-paypal -->
+
+<!-- modal-patreon -->
+<div id="modal-patreon" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title text-truncate">Patreon</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-lg">Yu Dunaev</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="dun43v" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success" href="https://patreon.com/dun43v" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">z1729 Factory</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="z1729" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://patreon.com/z1729" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">MARKETPLACE</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="marketplace" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://patreon.com/marketplace" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">Package Store</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="pkgstore" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://patreon.com/pkgstore" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / modal-patreon -->
+
+<!-- modal-liberapay -->
+<div id="modal-liberapay" class="modal fade" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl" role="document">
+    <div class="modal-content shadow-lg">
+      <div class="modal-header">
+        <h5 class="modal-title text-truncate">Liberapay</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row mb-3">
+          <div class="col-lg">Yu Dunaev</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="dun43v" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success" href="https://ru.liberapay.com/dun43v/donate" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">z1729 Factory</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="z1729" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://ru.liberapay.com/z1729/donate" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">MARKETPLACE</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="marketplace" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://ru.liberapay.com/marketplace/donate" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-lg">Package Store</div>
+          <div class="col-lg">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <span class="input-group-text"><i class="fas fa-at fa-fw"></i></span>
+              </div>
+              <input class="form-control" type="text" value="pkgstore" readonly/>
+              <div class="input-group-append">
+                <a class="btn btn-success disabled" href="https://ru.liberapay.com/pkgstore/donate" role="button" target="_blank">
+                  <i class="fas fa-donate fa-fw"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / modal-liberapay -->
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode@1/build/qrcode.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1/dist/umd/popper.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" defer></script>
+<script src="/assets/js/theme.min.js" defer></script>
+<!-- / scripts -->
+</body>
+</html>

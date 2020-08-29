@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg895"
+   version="1.1"
+   viewBox="0 0 512.00029 316.50601"
+   width="512.00031"
+   height="316.50601">
+  <metadata
+     id="metadata899">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Asset 1</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs879">
+    <style
+       id="style877"
+       type="text/css">.a{opacity:0;}.b{fill:#fff;}.c{fill:#ff5f00;}.d{fill:#eb001b;}.e{fill:#f79e1b;}</style>
+  </defs>
+  <title
+     id="title881">Asset 1</title>
+  <g
+     transform="scale(0.8000005)"
+     id="g73">
+    <rect
+       style="display:inline;fill:#ff5f00;stroke-width:5.49381161"
+       class="c"
+       x="224.83263"
+       y="42.297737"
+       width="190.41551"
+       height="311.0047"
+       id="rect887" />
+    <path
+       style="fill:#eb001b;stroke-width:5.49381161"
+       class="d"
+       d="m 244.44554,197.82756 a 197.44759,197.44759 0 0 1 75.53991,-155.474867 197.77722,197.77722 0 1 0 0,311.004677 197.44759,197.44759 0 0 1 -75.53991,-155.52981 z"
+       id="path889" />
+    <path
+       style="fill:#f79e1b;stroke-width:5.49381161"
+       class="e"
+       d="m 640,197.82756 a 197.77722,197.77722 0 0 1 -320.01455,155.47487 197.77722,197.77722 0 0 0 0,-311.004675 A 197.77722,197.77722 0 0 1 640,197.77262 Z"
+       id="path893" />
+  </g>
+</svg>
