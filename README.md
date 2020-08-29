@@ -1,1 +1,3 @@
-# donation-form.github.io
+# Information / Информация
+
+Form for donations.
