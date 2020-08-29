@@ -1,3 +1,3 @@
-# Information / Информация
+# Information
 
 Form for donations.
